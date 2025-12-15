@@ -1,0 +1,6 @@
+2025/12/14-22:07:03.291 6eb8 Reusing MANIFEST C:\Users\colem\vision_control\chrome_profile\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/14-22:07:03.291 6eb8 Recovering log #3
+2025/12/14-22:07:03.299 6eb8 Reusing old log C:\Users\colem\vision_control\chrome_profile\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2025/12/15-02:54:06.160 9374 Level-0 table #5: started
+2025/12/15-02:54:06.251 9374 Level-0 table #5: 1954371 bytes OK
+2025/12/15-02:54:06.255 9374 Delete type=0 #3
