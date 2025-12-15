@@ -1,7 +1,37 @@
-venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+venv/
 .env
+
+# OS
 .DS_Store
-.idea/
-.vscode/
+Thumbs.db
+
+# OpenCV / MediaPipe
+*.log
+
+# Chrome / Browser Profiles (CRITICAL)
+yt_profile/
+Default/
+User Data/
+DevToolsActivePort
+First Run
+Last Browser
+Last Version
+Local State
+BrowserMetrics*
+Crashpad/
+GPUCache/
+ShaderCache/
+GrShaderCache/
+GraphiteDawnCache/
+component_crx_cache/
+extensions_crx_cache/
+optimization_guide_model_store/
+segmentation_platform/
+
+# Models / large binaries (optional – keep if you want)
+models/vosk-en/
