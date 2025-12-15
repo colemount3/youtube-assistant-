@@ -10,12 +10,14 @@ PLAYLIST_URL = "https://www.youtube.com/watch?v=wzZb8Ijjwds&list=PLy8XVE4f72MpHM
 # UPDATE THESE
 SHUFFLE_X = 2081
 SHUFFLE_Y = 572
-
+safe_x = 1883
+safe_y = 659
 
 class YouTubePlayer:
     def __init__(self, monitor_index=0):
         self.monitor_index = monitor_index
 
+    # ================= LAUNCH =================
     def launch(self):
         print("[PLAYER] Launching playlist")
 
@@ -26,39 +28,38 @@ class YouTubePlayer:
         ])
 
         time.sleep(8)
-        self._focus()
+        #self._focus()
 
         # Click Shuffle
-        time.sleep(5)
+        #time.sleep(3)
         pyautogui.click(SHUFFLE_X, SHUFFLE_Y)
         print("[PLAYER] Shuffle clicked")
 
-        # Start playback
-       # time.sleep(0.5)
-        #pyautogui.press("k")
-
-        # Fullscreen
-        time.sleep(0.4)
-        pyautogui.press("f")
+        pyautogui.press("m")        
+        pyautogui.hotkey("shift", "n")
 
         time.sleep(0.5)
         self._move_to_monitor()
-        time.sleep(2)
-        pyautogui.press("m")
-        pyautogui.hotkey("shift","n")
+
+       # self.skip()
+
+         # Fullscreen
+        time.sleep(0.4)
+        pyautogui.press("f")
+
+
+        # Start muted + skip once
+        time.sleep(1)
+       
+        #self.skip()
 
         print("[PLAYER] Ready")
 
-    # ---------- helpers ----------
+    # ================= HELPERS =================
     def _focus(self):
-        for w in gw.getAllWindows():
-            if "youtube" in (w.title or "").lower():
-                try:
-                    w.activate()
-                    time.sleep(0.05)
-                    return
-                except Exception:
-                    pass
+       pyautogui.click(safe_x, safe_y)
+       
+                    
 
     def _move_to_monitor(self):
         monitors = get_monitors()
@@ -72,7 +73,7 @@ class YouTubePlayer:
                 w.resizeTo(m.width - 20, m.height - 20)
                 return
 
-    # ---------- controls ----------
+    # ================= CONTROLS =================
     def play_pause(self):
         self._focus()
         pyautogui.press("k")
